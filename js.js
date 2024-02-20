@@ -20,7 +20,12 @@ async function methodGetUsers() {
                     row += '<td>'+user.id+'</td>'
                     row += '<td>'+userName+'</td>'
                     row += '<td>'+user.title+'</td>'
-                    row += '<td>'+user.completed+'</td>'
+                    if (user.completed == true) {
+                        row += '<td> <input type="checkbox" checked /> </td>'
+                    } else {
+                    row += '<td> <input type="checkbox" /> </td>'
+                    }
+
                     row += '</tr>'
                     
                     $('table tbody').append(row)
